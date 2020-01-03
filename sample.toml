@@ -1,0 +1,9 @@
+
+[[http]]
+name = "example-http"
+bind-addr = "0.0.0.0:8123"
+buffer-dir = "/opt/data/clickhouse-relay"
+output = [
+    { name="local", location = "http://${CLICKHOUSE_HOST1}:${CLICKHOUSE_PORT1}" },
+    { name="other", location = "http://${CLICKHOUSE_HOST2}:${CLICKHOUSE_PORT2}" },
+]
