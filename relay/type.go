@@ -32,7 +32,7 @@ func (r BodyRequest) Marshal() ([]byte, error) {
 }
 
 func (r *BodyRequest) BuildRequest(ctx context.Context) *http.Request {
-	cpy := r.Request.Clone(ctx)
+	cpy := r.Request.WithContext(ctx)
 	cpy.Body = ioutil.NopCloser(bytes.NewReader(r.body))
 	return cpy
 }

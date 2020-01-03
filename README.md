@@ -3,7 +3,7 @@ Clickhouse Relay
 
 This project adds a basic high availability layer to clickhouse. With the right architecture and disaster recovery processes, this achieves a highly available setup.
 
-*NOTE:* `clickhouse-relay` must be built with Go 1.5+
+*NOTE:* `clickhouse-relay` must be built with Go 1.11+
 
 ## Usage
 

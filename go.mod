@@ -8,6 +8,8 @@ require (
 	github.com/kylelemons/godebug v1.1.0 // indirect
 	github.com/naoina/go-stringutil v0.1.0 // indirect
 	github.com/naoina/toml v0.1.1
-	github.com/stitchcula/clickhouse-relay v0.0.0-20200103074219-9259fe08272d
+	github.com/stitchcula/clickhouse-relay v0.0.0
 	github.com/syndtr/goleveldb v1.0.0 // indirect
 )
+
+replace github.com/stitchcula/clickhouse-relay v0.0.0 => ./
