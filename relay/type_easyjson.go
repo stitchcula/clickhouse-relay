@@ -281,6 +281,13 @@ func easyjsonBc289ab0DecodeGithubComStitchculaClickhouseRelayRelay(in *jlexer.Le
 				}
 				easyjsonBc289ab0DecodeCryptoTls(in, out.TLS)
 			}
+		case "Payload":
+			if in.IsNull() {
+				in.Skip()
+				out.Payload = nil
+			} else {
+				out.Payload = in.Bytes()
+			}
 		default:
 			in.SkipRecursive()
 		}
@@ -331,24 +338,24 @@ func easyjsonBc289ab0EncodeGithubComStitchculaClickhouseRelayRelay(out *jwriter.
 			out.RawString(`null`)
 		} else {
 			out.RawByte('{')
-			v10First := true
-			for v10Name, v10Value := range in.Header {
-				if v10First {
-					v10First = false
+			v11First := true
+			for v11Name, v11Value := range in.Header {
+				if v11First {
+					v11First = false
 				} else {
 					out.RawByte(',')
 				}
-				out.String(string(v10Name))
+				out.String(string(v11Name))
 				out.RawByte(':')
-				if v10Value == nil && (out.Flags&jwriter.NilSliceAsEmpty) == 0 {
+				if v11Value == nil && (out.Flags&jwriter.NilSliceAsEmpty) == 0 {
 					out.RawString("null")
 				} else {
 					out.RawByte('[')
-					for v11, v12 := range v10Value {
-						if v11 > 0 {
+					for v12, v13 := range v11Value {
+						if v12 > 0 {
 							out.RawByte(',')
 						}
-						out.String(string(v12))
+						out.String(string(v13))
 					}
 					out.RawByte(']')
 				}
@@ -368,11 +375,11 @@ func easyjsonBc289ab0EncodeGithubComStitchculaClickhouseRelayRelay(out *jwriter.
 			out.RawString("null")
 		} else {
 			out.RawByte('[')
-			for v13, v14 := range in.TransferEncoding {
-				if v13 > 0 {
+			for v14, v15 := range in.TransferEncoding {
+				if v14 > 0 {
 					out.RawByte(',')
 				}
-				out.String(string(v14))
+				out.String(string(v15))
 			}
 			out.RawByte(']')
 		}
@@ -394,24 +401,24 @@ func easyjsonBc289ab0EncodeGithubComStitchculaClickhouseRelayRelay(out *jwriter.
 			out.RawString(`null`)
 		} else {
 			out.RawByte('{')
-			v15First := true
-			for v15Name, v15Value := range in.Form {
-				if v15First {
-					v15First = false
+			v16First := true
+			for v16Name, v16Value := range in.Form {
+				if v16First {
+					v16First = false
 				} else {
 					out.RawByte(',')
 				}
-				out.String(string(v15Name))
+				out.String(string(v16Name))
 				out.RawByte(':')
-				if v15Value == nil && (out.Flags&jwriter.NilSliceAsEmpty) == 0 {
+				if v16Value == nil && (out.Flags&jwriter.NilSliceAsEmpty) == 0 {
 					out.RawString("null")
 				} else {
 					out.RawByte('[')
-					for v16, v17 := range v15Value {
-						if v16 > 0 {
+					for v17, v18 := range v16Value {
+						if v17 > 0 {
 							out.RawByte(',')
 						}
-						out.String(string(v17))
+						out.String(string(v18))
 					}
 					out.RawByte(']')
 				}
@@ -426,24 +433,24 @@ func easyjsonBc289ab0EncodeGithubComStitchculaClickhouseRelayRelay(out *jwriter.
 			out.RawString(`null`)
 		} else {
 			out.RawByte('{')
-			v18First := true
-			for v18Name, v18Value := range in.PostForm {
-				if v18First {
-					v18First = false
+			v19First := true
+			for v19Name, v19Value := range in.PostForm {
+				if v19First {
+					v19First = false
 				} else {
 					out.RawByte(',')
 				}
-				out.String(string(v18Name))
+				out.String(string(v19Name))
 				out.RawByte(':')
-				if v18Value == nil && (out.Flags&jwriter.NilSliceAsEmpty) == 0 {
+				if v19Value == nil && (out.Flags&jwriter.NilSliceAsEmpty) == 0 {
 					out.RawString("null")
 				} else {
 					out.RawByte('[')
-					for v19, v20 := range v18Value {
-						if v19 > 0 {
+					for v20, v21 := range v19Value {
+						if v20 > 0 {
 							out.RawByte(',')
 						}
-						out.String(string(v20))
+						out.String(string(v21))
 					}
 					out.RawByte(']')
 				}
@@ -467,24 +474,24 @@ func easyjsonBc289ab0EncodeGithubComStitchculaClickhouseRelayRelay(out *jwriter.
 			out.RawString(`null`)
 		} else {
 			out.RawByte('{')
-			v21First := true
-			for v21Name, v21Value := range in.Trailer {
-				if v21First {
-					v21First = false
+			v22First := true
+			for v22Name, v22Value := range in.Trailer {
+				if v22First {
+					v22First = false
 				} else {
 					out.RawByte(',')
 				}
-				out.String(string(v21Name))
+				out.String(string(v22Name))
 				out.RawByte(':')
-				if v21Value == nil && (out.Flags&jwriter.NilSliceAsEmpty) == 0 {
+				if v22Value == nil && (out.Flags&jwriter.NilSliceAsEmpty) == 0 {
 					out.RawString("null")
 				} else {
 					out.RawByte('[')
-					for v22, v23 := range v21Value {
-						if v22 > 0 {
+					for v23, v24 := range v22Value {
+						if v23 > 0 {
 							out.RawByte(',')
 						}
-						out.String(string(v23))
+						out.String(string(v24))
 					}
 					out.RawByte(']')
 				}
@@ -510,6 +517,11 @@ func easyjsonBc289ab0EncodeGithubComStitchculaClickhouseRelayRelay(out *jwriter.
 		} else {
 			easyjsonBc289ab0EncodeCryptoTls(out, *in.TLS)
 		}
+	}
+	{
+		const prefix string = ",\"Payload\":"
+		out.RawString(prefix)
+		out.Base64Bytes(in.Payload)
 	}
 	out.RawByte('}')
 }
@@ -586,17 +598,17 @@ func easyjsonBc289ab0DecodeCryptoTls(in *jlexer.Lexer, out *tls.ConnectionState)
 					out.PeerCertificates = (out.PeerCertificates)[:0]
 				}
 				for !in.IsDelim(']') {
-					var v24 *x509.Certificate
+					var v27 *x509.Certificate
 					if in.IsNull() {
 						in.Skip()
-						v24 = nil
+						v27 = nil
 					} else {
-						if v24 == nil {
-							v24 = new(x509.Certificate)
+						if v27 == nil {
+							v27 = new(x509.Certificate)
 						}
-						easyjsonBc289ab0DecodeCryptoX509(in, v24)
+						easyjsonBc289ab0DecodeCryptoX509(in, v27)
 					}
-					out.PeerCertificates = append(out.PeerCertificates, v24)
+					out.PeerCertificates = append(out.PeerCertificates, v27)
 					in.WantComma()
 				}
 				in.Delim(']')
@@ -617,38 +629,38 @@ func easyjsonBc289ab0DecodeCryptoTls(in *jlexer.Lexer, out *tls.ConnectionState)
 					out.VerifiedChains = (out.VerifiedChains)[:0]
 				}
 				for !in.IsDelim(']') {
-					var v25 []*x509.Certificate
+					var v28 []*x509.Certificate
 					if in.IsNull() {
 						in.Skip()
-						v25 = nil
+						v28 = nil
 					} else {
 						in.Delim('[')
-						if v25 == nil {
+						if v28 == nil {
 							if !in.IsDelim(']') {
-								v25 = make([]*x509.Certificate, 0, 8)
+								v28 = make([]*x509.Certificate, 0, 8)
 							} else {
-								v25 = []*x509.Certificate{}
+								v28 = []*x509.Certificate{}
 							}
 						} else {
-							v25 = (v25)[:0]
+							v28 = (v28)[:0]
 						}
 						for !in.IsDelim(']') {
-							var v26 *x509.Certificate
+							var v29 *x509.Certificate
 							if in.IsNull() {
 								in.Skip()
-								v26 = nil
+								v29 = nil
 							} else {
-								if v26 == nil {
-									v26 = new(x509.Certificate)
+								if v29 == nil {
+									v29 = new(x509.Certificate)
 								}
-								easyjsonBc289ab0DecodeCryptoX509(in, v26)
+								easyjsonBc289ab0DecodeCryptoX509(in, v29)
 							}
-							v25 = append(v25, v26)
+							v28 = append(v28, v29)
 							in.WantComma()
 						}
 						in.Delim(']')
 					}
-					out.VerifiedChains = append(out.VerifiedChains, v25)
+					out.VerifiedChains = append(out.VerifiedChains, v28)
 					in.WantComma()
 				}
 				in.Delim(']')
@@ -669,14 +681,14 @@ func easyjsonBc289ab0DecodeCryptoTls(in *jlexer.Lexer, out *tls.ConnectionState)
 					out.SignedCertificateTimestamps = (out.SignedCertificateTimestamps)[:0]
 				}
 				for !in.IsDelim(']') {
-					var v27 []uint8
+					var v30 []uint8
 					if in.IsNull() {
 						in.Skip()
-						v27 = nil
+						v30 = nil
 					} else {
-						v27 = in.Bytes()
+						v30 = in.Bytes()
 					}
-					out.SignedCertificateTimestamps = append(out.SignedCertificateTimestamps, v27)
+					out.SignedCertificateTimestamps = append(out.SignedCertificateTimestamps, v30)
 					in.WantComma()
 				}
 				in.Delim(']')
@@ -751,14 +763,14 @@ func easyjsonBc289ab0EncodeCryptoTls(out *jwriter.Writer, in tls.ConnectionState
 			out.RawString("null")
 		} else {
 			out.RawByte('[')
-			for v31, v32 := range in.PeerCertificates {
-				if v31 > 0 {
+			for v34, v35 := range in.PeerCertificates {
+				if v34 > 0 {
 					out.RawByte(',')
 				}
-				if v32 == nil {
+				if v35 == nil {
 					out.RawString("null")
 				} else {
-					easyjsonBc289ab0EncodeCryptoX509(out, *v32)
+					easyjsonBc289ab0EncodeCryptoX509(out, *v35)
 				}
 			}
 			out.RawByte(']')
@@ -771,22 +783,22 @@ func easyjsonBc289ab0EncodeCryptoTls(out *jwriter.Writer, in tls.ConnectionState
 			out.RawString("null")
 		} else {
 			out.RawByte('[')
-			for v33, v34 := range in.VerifiedChains {
-				if v33 > 0 {
+			for v36, v37 := range in.VerifiedChains {
+				if v36 > 0 {
 					out.RawByte(',')
 				}
-				if v34 == nil && (out.Flags&jwriter.NilSliceAsEmpty) == 0 {
+				if v37 == nil && (out.Flags&jwriter.NilSliceAsEmpty) == 0 {
 					out.RawString("null")
 				} else {
 					out.RawByte('[')
-					for v35, v36 := range v34 {
-						if v35 > 0 {
+					for v38, v39 := range v37 {
+						if v38 > 0 {
 							out.RawByte(',')
 						}
-						if v36 == nil {
+						if v39 == nil {
 							out.RawString("null")
 						} else {
-							easyjsonBc289ab0EncodeCryptoX509(out, *v36)
+							easyjsonBc289ab0EncodeCryptoX509(out, *v39)
 						}
 					}
 					out.RawByte(']')
@@ -802,11 +814,11 @@ func easyjsonBc289ab0EncodeCryptoTls(out *jwriter.Writer, in tls.ConnectionState
 			out.RawString("null")
 		} else {
 			out.RawByte('[')
-			for v37, v38 := range in.SignedCertificateTimestamps {
-				if v37 > 0 {
+			for v40, v41 := range in.SignedCertificateTimestamps {
+				if v40 > 0 {
 					out.RawByte(',')
 				}
-				out.Base64Bytes(v38)
+				out.Base64Bytes(v41)
 			}
 			out.RawByte(']')
 		}
@@ -940,9 +952,9 @@ func easyjsonBc289ab0DecodeCryptoX509(in *jlexer.Lexer, out *x509.Certificate) {
 					out.Extensions = (out.Extensions)[:0]
 				}
 				for !in.IsDelim(']') {
-					var v51 pkix.Extension
-					easyjsonBc289ab0DecodeCryptoX509Pkix1(in, &v51)
-					out.Extensions = append(out.Extensions, v51)
+					var v54 pkix.Extension
+					easyjsonBc289ab0DecodeCryptoX509Pkix1(in, &v54)
+					out.Extensions = append(out.Extensions, v54)
 					in.WantComma()
 				}
 				in.Delim(']')
@@ -963,9 +975,9 @@ func easyjsonBc289ab0DecodeCryptoX509(in *jlexer.Lexer, out *x509.Certificate) {
 					out.ExtraExtensions = (out.ExtraExtensions)[:0]
 				}
 				for !in.IsDelim(']') {
-					var v52 pkix.Extension
-					easyjsonBc289ab0DecodeCryptoX509Pkix1(in, &v52)
-					out.ExtraExtensions = append(out.ExtraExtensions, v52)
+					var v55 pkix.Extension
+					easyjsonBc289ab0DecodeCryptoX509Pkix1(in, &v55)
+					out.ExtraExtensions = append(out.ExtraExtensions, v55)
 					in.WantComma()
 				}
 				in.Delim(']')
@@ -984,73 +996,6 @@ func easyjsonBc289ab0DecodeCryptoX509(in *jlexer.Lexer, out *x509.Certificate) {
 					}
 				} else {
 					out.UnhandledCriticalExtensions = (out.UnhandledCriticalExtensions)[:0]
-				}
-				for !in.IsDelim(']') {
-					var v53 asn1.ObjectIdentifier
-					if in.IsNull() {
-						in.Skip()
-						v53 = nil
-					} else {
-						in.Delim('[')
-						if v53 == nil {
-							if !in.IsDelim(']') {
-								v53 = make(asn1.ObjectIdentifier, 0, 8)
-							} else {
-								v53 = asn1.ObjectIdentifier{}
-							}
-						} else {
-							v53 = (v53)[:0]
-						}
-						for !in.IsDelim(']') {
-							var v54 int
-							v54 = int(in.Int())
-							v53 = append(v53, v54)
-							in.WantComma()
-						}
-						in.Delim(']')
-					}
-					out.UnhandledCriticalExtensions = append(out.UnhandledCriticalExtensions, v53)
-					in.WantComma()
-				}
-				in.Delim(']')
-			}
-		case "ExtKeyUsage":
-			if in.IsNull() {
-				in.Skip()
-				out.ExtKeyUsage = nil
-			} else {
-				in.Delim('[')
-				if out.ExtKeyUsage == nil {
-					if !in.IsDelim(']') {
-						out.ExtKeyUsage = make([]x509.ExtKeyUsage, 0, 8)
-					} else {
-						out.ExtKeyUsage = []x509.ExtKeyUsage{}
-					}
-				} else {
-					out.ExtKeyUsage = (out.ExtKeyUsage)[:0]
-				}
-				for !in.IsDelim(']') {
-					var v55 x509.ExtKeyUsage
-					v55 = x509.ExtKeyUsage(in.Int())
-					out.ExtKeyUsage = append(out.ExtKeyUsage, v55)
-					in.WantComma()
-				}
-				in.Delim(']')
-			}
-		case "UnknownExtKeyUsage":
-			if in.IsNull() {
-				in.Skip()
-				out.UnknownExtKeyUsage = nil
-			} else {
-				in.Delim('[')
-				if out.UnknownExtKeyUsage == nil {
-					if !in.IsDelim(']') {
-						out.UnknownExtKeyUsage = make([]asn1.ObjectIdentifier, 0, 2)
-					} else {
-						out.UnknownExtKeyUsage = []asn1.ObjectIdentifier{}
-					}
-				} else {
-					out.UnknownExtKeyUsage = (out.UnknownExtKeyUsage)[:0]
 				}
 				for !in.IsDelim(']') {
 					var v56 asn1.ObjectIdentifier
@@ -1076,7 +1021,74 @@ func easyjsonBc289ab0DecodeCryptoX509(in *jlexer.Lexer, out *x509.Certificate) {
 						}
 						in.Delim(']')
 					}
-					out.UnknownExtKeyUsage = append(out.UnknownExtKeyUsage, v56)
+					out.UnhandledCriticalExtensions = append(out.UnhandledCriticalExtensions, v56)
+					in.WantComma()
+				}
+				in.Delim(']')
+			}
+		case "ExtKeyUsage":
+			if in.IsNull() {
+				in.Skip()
+				out.ExtKeyUsage = nil
+			} else {
+				in.Delim('[')
+				if out.ExtKeyUsage == nil {
+					if !in.IsDelim(']') {
+						out.ExtKeyUsage = make([]x509.ExtKeyUsage, 0, 8)
+					} else {
+						out.ExtKeyUsage = []x509.ExtKeyUsage{}
+					}
+				} else {
+					out.ExtKeyUsage = (out.ExtKeyUsage)[:0]
+				}
+				for !in.IsDelim(']') {
+					var v58 x509.ExtKeyUsage
+					v58 = x509.ExtKeyUsage(in.Int())
+					out.ExtKeyUsage = append(out.ExtKeyUsage, v58)
+					in.WantComma()
+				}
+				in.Delim(']')
+			}
+		case "UnknownExtKeyUsage":
+			if in.IsNull() {
+				in.Skip()
+				out.UnknownExtKeyUsage = nil
+			} else {
+				in.Delim('[')
+				if out.UnknownExtKeyUsage == nil {
+					if !in.IsDelim(']') {
+						out.UnknownExtKeyUsage = make([]asn1.ObjectIdentifier, 0, 2)
+					} else {
+						out.UnknownExtKeyUsage = []asn1.ObjectIdentifier{}
+					}
+				} else {
+					out.UnknownExtKeyUsage = (out.UnknownExtKeyUsage)[:0]
+				}
+				for !in.IsDelim(']') {
+					var v59 asn1.ObjectIdentifier
+					if in.IsNull() {
+						in.Skip()
+						v59 = nil
+					} else {
+						in.Delim('[')
+						if v59 == nil {
+							if !in.IsDelim(']') {
+								v59 = make(asn1.ObjectIdentifier, 0, 8)
+							} else {
+								v59 = asn1.ObjectIdentifier{}
+							}
+						} else {
+							v59 = (v59)[:0]
+						}
+						for !in.IsDelim(']') {
+							var v60 int
+							v60 = int(in.Int())
+							v59 = append(v59, v60)
+							in.WantComma()
+						}
+						in.Delim(']')
+					}
+					out.UnknownExtKeyUsage = append(out.UnknownExtKeyUsage, v59)
 					in.WantComma()
 				}
 				in.Delim(']')
@@ -1119,9 +1131,9 @@ func easyjsonBc289ab0DecodeCryptoX509(in *jlexer.Lexer, out *x509.Certificate) {
 					out.OCSPServer = (out.OCSPServer)[:0]
 				}
 				for !in.IsDelim(']') {
-					var v60 string
-					v60 = string(in.String())
-					out.OCSPServer = append(out.OCSPServer, v60)
+					var v63 string
+					v63 = string(in.String())
+					out.OCSPServer = append(out.OCSPServer, v63)
 					in.WantComma()
 				}
 				in.Delim(']')
@@ -1142,9 +1154,9 @@ func easyjsonBc289ab0DecodeCryptoX509(in *jlexer.Lexer, out *x509.Certificate) {
 					out.IssuingCertificateURL = (out.IssuingCertificateURL)[:0]
 				}
 				for !in.IsDelim(']') {
-					var v61 string
-					v61 = string(in.String())
-					out.IssuingCertificateURL = append(out.IssuingCertificateURL, v61)
+					var v64 string
+					v64 = string(in.String())
+					out.IssuingCertificateURL = append(out.IssuingCertificateURL, v64)
 					in.WantComma()
 				}
 				in.Delim(']')
@@ -1165,9 +1177,9 @@ func easyjsonBc289ab0DecodeCryptoX509(in *jlexer.Lexer, out *x509.Certificate) {
 					out.DNSNames = (out.DNSNames)[:0]
 				}
 				for !in.IsDelim(']') {
-					var v62 string
-					v62 = string(in.String())
-					out.DNSNames = append(out.DNSNames, v62)
+					var v65 string
+					v65 = string(in.String())
+					out.DNSNames = append(out.DNSNames, v65)
 					in.WantComma()
 				}
 				in.Delim(']')
@@ -1188,9 +1200,9 @@ func easyjsonBc289ab0DecodeCryptoX509(in *jlexer.Lexer, out *x509.Certificate) {
 					out.EmailAddresses = (out.EmailAddresses)[:0]
 				}
 				for !in.IsDelim(']') {
-					var v63 string
-					v63 = string(in.String())
-					out.EmailAddresses = append(out.EmailAddresses, v63)
+					var v66 string
+					v66 = string(in.String())
+					out.EmailAddresses = append(out.EmailAddresses, v66)
 					in.WantComma()
 				}
 				in.Delim(']')
@@ -1211,11 +1223,11 @@ func easyjsonBc289ab0DecodeCryptoX509(in *jlexer.Lexer, out *x509.Certificate) {
 					out.IPAddresses = (out.IPAddresses)[:0]
 				}
 				for !in.IsDelim(']') {
-					var v64 net.IP
+					var v67 net.IP
 					if data := in.UnsafeBytes(); in.Ok() {
-						in.AddError((v64).UnmarshalText(data))
+						in.AddError((v67).UnmarshalText(data))
 					}
-					out.IPAddresses = append(out.IPAddresses, v64)
+					out.IPAddresses = append(out.IPAddresses, v67)
 					in.WantComma()
 				}
 				in.Delim(']')
@@ -1236,17 +1248,17 @@ func easyjsonBc289ab0DecodeCryptoX509(in *jlexer.Lexer, out *x509.Certificate) {
 					out.URIs = (out.URIs)[:0]
 				}
 				for !in.IsDelim(']') {
-					var v65 *url.URL
+					var v68 *url.URL
 					if in.IsNull() {
 						in.Skip()
-						v65 = nil
+						v68 = nil
 					} else {
-						if v65 == nil {
-							v65 = new(url.URL)
+						if v68 == nil {
+							v68 = new(url.URL)
 						}
-						easyjsonBc289ab0DecodeNetUrl(in, v65)
+						easyjsonBc289ab0DecodeNetUrl(in, v68)
 					}
-					out.URIs = append(out.URIs, v65)
+					out.URIs = append(out.URIs, v68)
 					in.WantComma()
 				}
 				in.Delim(']')
@@ -1269,9 +1281,9 @@ func easyjsonBc289ab0DecodeCryptoX509(in *jlexer.Lexer, out *x509.Certificate) {
 					out.PermittedDNSDomains = (out.PermittedDNSDomains)[:0]
 				}
 				for !in.IsDelim(']') {
-					var v66 string
-					v66 = string(in.String())
-					out.PermittedDNSDomains = append(out.PermittedDNSDomains, v66)
+					var v69 string
+					v69 = string(in.String())
+					out.PermittedDNSDomains = append(out.PermittedDNSDomains, v69)
 					in.WantComma()
 				}
 				in.Delim(']')
@@ -1292,9 +1304,9 @@ func easyjsonBc289ab0DecodeCryptoX509(in *jlexer.Lexer, out *x509.Certificate) {
 					out.ExcludedDNSDomains = (out.ExcludedDNSDomains)[:0]
 				}
 				for !in.IsDelim(']') {
-					var v67 string
-					v67 = string(in.String())
-					out.ExcludedDNSDomains = append(out.ExcludedDNSDomains, v67)
+					var v70 string
+					v70 = string(in.String())
+					out.ExcludedDNSDomains = append(out.ExcludedDNSDomains, v70)
 					in.WantComma()
 				}
 				in.Delim(']')
@@ -1315,17 +1327,17 @@ func easyjsonBc289ab0DecodeCryptoX509(in *jlexer.Lexer, out *x509.Certificate) {
 					out.PermittedIPRanges = (out.PermittedIPRanges)[:0]
 				}
 				for !in.IsDelim(']') {
-					var v68 *net.IPNet
+					var v71 *net.IPNet
 					if in.IsNull() {
 						in.Skip()
-						v68 = nil
+						v71 = nil
 					} else {
-						if v68 == nil {
-							v68 = new(net.IPNet)
+						if v71 == nil {
+							v71 = new(net.IPNet)
 						}
-						easyjsonBc289ab0DecodeNet(in, v68)
+						easyjsonBc289ab0DecodeNet(in, v71)
 					}
-					out.PermittedIPRanges = append(out.PermittedIPRanges, v68)
+					out.PermittedIPRanges = append(out.PermittedIPRanges, v71)
 					in.WantComma()
 				}
 				in.Delim(']')
@@ -1346,17 +1358,17 @@ func easyjsonBc289ab0DecodeCryptoX509(in *jlexer.Lexer, out *x509.Certificate) {
 					out.ExcludedIPRanges = (out.ExcludedIPRanges)[:0]
 				}
 				for !in.IsDelim(']') {
-					var v69 *net.IPNet
+					var v72 *net.IPNet
 					if in.IsNull() {
 						in.Skip()
-						v69 = nil
+						v72 = nil
 					} else {
-						if v69 == nil {
-							v69 = new(net.IPNet)
+						if v72 == nil {
+							v72 = new(net.IPNet)
 						}
-						easyjsonBc289ab0DecodeNet(in, v69)
+						easyjsonBc289ab0DecodeNet(in, v72)
 					}
-					out.ExcludedIPRanges = append(out.ExcludedIPRanges, v69)
+					out.ExcludedIPRanges = append(out.ExcludedIPRanges, v72)
 					in.WantComma()
 				}
 				in.Delim(']')
@@ -1377,9 +1389,9 @@ func easyjsonBc289ab0DecodeCryptoX509(in *jlexer.Lexer, out *x509.Certificate) {
 					out.PermittedEmailAddresses = (out.PermittedEmailAddresses)[:0]
 				}
 				for !in.IsDelim(']') {
-					var v70 string
-					v70 = string(in.String())
-					out.PermittedEmailAddresses = append(out.PermittedEmailAddresses, v70)
+					var v73 string
+					v73 = string(in.String())
+					out.PermittedEmailAddresses = append(out.PermittedEmailAddresses, v73)
 					in.WantComma()
 				}
 				in.Delim(']')
@@ -1400,9 +1412,9 @@ func easyjsonBc289ab0DecodeCryptoX509(in *jlexer.Lexer, out *x509.Certificate) {
 					out.ExcludedEmailAddresses = (out.ExcludedEmailAddresses)[:0]
 				}
 				for !in.IsDelim(']') {
-					var v71 string
-					v71 = string(in.String())
-					out.ExcludedEmailAddresses = append(out.ExcludedEmailAddresses, v71)
+					var v74 string
+					v74 = string(in.String())
+					out.ExcludedEmailAddresses = append(out.ExcludedEmailAddresses, v74)
 					in.WantComma()
 				}
 				in.Delim(']')
@@ -1423,9 +1435,9 @@ func easyjsonBc289ab0DecodeCryptoX509(in *jlexer.Lexer, out *x509.Certificate) {
 					out.PermittedURIDomains = (out.PermittedURIDomains)[:0]
 				}
 				for !in.IsDelim(']') {
-					var v72 string
-					v72 = string(in.String())
-					out.PermittedURIDomains = append(out.PermittedURIDomains, v72)
+					var v75 string
+					v75 = string(in.String())
+					out.PermittedURIDomains = append(out.PermittedURIDomains, v75)
 					in.WantComma()
 				}
 				in.Delim(']')
@@ -1446,9 +1458,9 @@ func easyjsonBc289ab0DecodeCryptoX509(in *jlexer.Lexer, out *x509.Certificate) {
 					out.ExcludedURIDomains = (out.ExcludedURIDomains)[:0]
 				}
 				for !in.IsDelim(']') {
-					var v73 string
-					v73 = string(in.String())
-					out.ExcludedURIDomains = append(out.ExcludedURIDomains, v73)
+					var v76 string
+					v76 = string(in.String())
+					out.ExcludedURIDomains = append(out.ExcludedURIDomains, v76)
 					in.WantComma()
 				}
 				in.Delim(']')
@@ -1469,9 +1481,9 @@ func easyjsonBc289ab0DecodeCryptoX509(in *jlexer.Lexer, out *x509.Certificate) {
 					out.CRLDistributionPoints = (out.CRLDistributionPoints)[:0]
 				}
 				for !in.IsDelim(']') {
-					var v74 string
-					v74 = string(in.String())
-					out.CRLDistributionPoints = append(out.CRLDistributionPoints, v74)
+					var v77 string
+					v77 = string(in.String())
+					out.CRLDistributionPoints = append(out.CRLDistributionPoints, v77)
 					in.WantComma()
 				}
 				in.Delim(']')
@@ -1492,30 +1504,30 @@ func easyjsonBc289ab0DecodeCryptoX509(in *jlexer.Lexer, out *x509.Certificate) {
 					out.PolicyIdentifiers = (out.PolicyIdentifiers)[:0]
 				}
 				for !in.IsDelim(']') {
-					var v75 asn1.ObjectIdentifier
+					var v78 asn1.ObjectIdentifier
 					if in.IsNull() {
 						in.Skip()
-						v75 = nil
+						v78 = nil
 					} else {
 						in.Delim('[')
-						if v75 == nil {
+						if v78 == nil {
 							if !in.IsDelim(']') {
-								v75 = make(asn1.ObjectIdentifier, 0, 8)
+								v78 = make(asn1.ObjectIdentifier, 0, 8)
 							} else {
-								v75 = asn1.ObjectIdentifier{}
+								v78 = asn1.ObjectIdentifier{}
 							}
 						} else {
-							v75 = (v75)[:0]
+							v78 = (v78)[:0]
 						}
 						for !in.IsDelim(']') {
-							var v76 int
-							v76 = int(in.Int())
-							v75 = append(v75, v76)
+							var v79 int
+							v79 = int(in.Int())
+							v78 = append(v78, v79)
 							in.WantComma()
 						}
 						in.Delim(']')
 					}
-					out.PolicyIdentifiers = append(out.PolicyIdentifiers, v75)
+					out.PolicyIdentifiers = append(out.PolicyIdentifiers, v78)
 					in.WantComma()
 				}
 				in.Delim(']')
@@ -1631,11 +1643,11 @@ func easyjsonBc289ab0EncodeCryptoX509(out *jwriter.Writer, in x509.Certificate) 
 			out.RawString("null")
 		} else {
 			out.RawByte('[')
-			for v89, v90 := range in.Extensions {
-				if v89 > 0 {
+			for v92, v93 := range in.Extensions {
+				if v92 > 0 {
 					out.RawByte(',')
 				}
-				easyjsonBc289ab0EncodeCryptoX509Pkix1(out, v90)
+				easyjsonBc289ab0EncodeCryptoX509Pkix1(out, v93)
 			}
 			out.RawByte(']')
 		}
@@ -1647,11 +1659,11 @@ func easyjsonBc289ab0EncodeCryptoX509(out *jwriter.Writer, in x509.Certificate) 
 			out.RawString("null")
 		} else {
 			out.RawByte('[')
-			for v91, v92 := range in.ExtraExtensions {
-				if v91 > 0 {
+			for v94, v95 := range in.ExtraExtensions {
+				if v94 > 0 {
 					out.RawByte(',')
 				}
-				easyjsonBc289ab0EncodeCryptoX509Pkix1(out, v92)
+				easyjsonBc289ab0EncodeCryptoX509Pkix1(out, v95)
 			}
 			out.RawByte(']')
 		}
@@ -1663,19 +1675,19 @@ func easyjsonBc289ab0EncodeCryptoX509(out *jwriter.Writer, in x509.Certificate) 
 			out.RawString("null")
 		} else {
 			out.RawByte('[')
-			for v93, v94 := range in.UnhandledCriticalExtensions {
-				if v93 > 0 {
+			for v96, v97 := range in.UnhandledCriticalExtensions {
+				if v96 > 0 {
 					out.RawByte(',')
 				}
-				if v94 == nil && (out.Flags&jwriter.NilSliceAsEmpty) == 0 {
+				if v97 == nil && (out.Flags&jwriter.NilSliceAsEmpty) == 0 {
 					out.RawString("null")
 				} else {
 					out.RawByte('[')
-					for v95, v96 := range v94 {
-						if v95 > 0 {
+					for v98, v99 := range v97 {
+						if v98 > 0 {
 							out.RawByte(',')
 						}
-						out.Int(int(v96))
+						out.Int(int(v99))
 					}
 					out.RawByte(']')
 				}
@@ -1690,11 +1702,11 @@ func easyjsonBc289ab0EncodeCryptoX509(out *jwriter.Writer, in x509.Certificate) 
 			out.RawString("null")
 		} else {
 			out.RawByte('[')
-			for v97, v98 := range in.ExtKeyUsage {
-				if v97 > 0 {
+			for v100, v101 := range in.ExtKeyUsage {
+				if v100 > 0 {
 					out.RawByte(',')
 				}
-				out.Int(int(v98))
+				out.Int(int(v101))
 			}
 			out.RawByte(']')
 		}
@@ -1706,19 +1718,19 @@ func easyjsonBc289ab0EncodeCryptoX509(out *jwriter.Writer, in x509.Certificate) 
 			out.RawString("null")
 		} else {
 			out.RawByte('[')
-			for v99, v100 := range in.UnknownExtKeyUsage {
-				if v99 > 0 {
+			for v102, v103 := range in.UnknownExtKeyUsage {
+				if v102 > 0 {
 					out.RawByte(',')
 				}
-				if v100 == nil && (out.Flags&jwriter.NilSliceAsEmpty) == 0 {
+				if v103 == nil && (out.Flags&jwriter.NilSliceAsEmpty) == 0 {
 					out.RawString("null")
 				} else {
 					out.RawByte('[')
-					for v101, v102 := range v100 {
-						if v101 > 0 {
+					for v104, v105 := range v103 {
+						if v104 > 0 {
 							out.RawByte(',')
 						}
-						out.Int(int(v102))
+						out.Int(int(v105))
 					}
 					out.RawByte(']')
 				}
@@ -1763,11 +1775,11 @@ func easyjsonBc289ab0EncodeCryptoX509(out *jwriter.Writer, in x509.Certificate) 
 			out.RawString("null")
 		} else {
 			out.RawByte('[')
-			for v107, v108 := range in.OCSPServer {
-				if v107 > 0 {
+			for v110, v111 := range in.OCSPServer {
+				if v110 > 0 {
 					out.RawByte(',')
 				}
-				out.String(string(v108))
+				out.String(string(v111))
 			}
 			out.RawByte(']')
 		}
@@ -1779,11 +1791,11 @@ func easyjsonBc289ab0EncodeCryptoX509(out *jwriter.Writer, in x509.Certificate) 
 			out.RawString("null")
 		} else {
 			out.RawByte('[')
-			for v109, v110 := range in.IssuingCertificateURL {
-				if v109 > 0 {
+			for v112, v113 := range in.IssuingCertificateURL {
+				if v112 > 0 {
 					out.RawByte(',')
 				}
-				out.String(string(v110))
+				out.String(string(v113))
 			}
 			out.RawByte(']')
 		}
@@ -1795,11 +1807,11 @@ func easyjsonBc289ab0EncodeCryptoX509(out *jwriter.Writer, in x509.Certificate) 
 			out.RawString("null")
 		} else {
 			out.RawByte('[')
-			for v111, v112 := range in.DNSNames {
-				if v111 > 0 {
+			for v114, v115 := range in.DNSNames {
+				if v114 > 0 {
 					out.RawByte(',')
 				}
-				out.String(string(v112))
+				out.String(string(v115))
 			}
 			out.RawByte(']')
 		}
@@ -1811,11 +1823,11 @@ func easyjsonBc289ab0EncodeCryptoX509(out *jwriter.Writer, in x509.Certificate) 
 			out.RawString("null")
 		} else {
 			out.RawByte('[')
-			for v113, v114 := range in.EmailAddresses {
-				if v113 > 0 {
+			for v116, v117 := range in.EmailAddresses {
+				if v116 > 0 {
 					out.RawByte(',')
 				}
-				out.String(string(v114))
+				out.String(string(v117))
 			}
 			out.RawByte(']')
 		}
@@ -1827,11 +1839,11 @@ func easyjsonBc289ab0EncodeCryptoX509(out *jwriter.Writer, in x509.Certificate) 
 			out.RawString("null")
 		} else {
 			out.RawByte('[')
-			for v115, v116 := range in.IPAddresses {
-				if v115 > 0 {
+			for v118, v119 := range in.IPAddresses {
+				if v118 > 0 {
 					out.RawByte(',')
 				}
-				out.RawText((v116).MarshalText())
+				out.RawText((v119).MarshalText())
 			}
 			out.RawByte(']')
 		}
@@ -1843,14 +1855,14 @@ func easyjsonBc289ab0EncodeCryptoX509(out *jwriter.Writer, in x509.Certificate) 
 			out.RawString("null")
 		} else {
 			out.RawByte('[')
-			for v117, v118 := range in.URIs {
-				if v117 > 0 {
+			for v120, v121 := range in.URIs {
+				if v120 > 0 {
 					out.RawByte(',')
 				}
-				if v118 == nil {
+				if v121 == nil {
 					out.RawString("null")
 				} else {
-					easyjsonBc289ab0EncodeNetUrl(out, *v118)
+					easyjsonBc289ab0EncodeNetUrl(out, *v121)
 				}
 			}
 			out.RawByte(']')
@@ -1868,11 +1880,11 @@ func easyjsonBc289ab0EncodeCryptoX509(out *jwriter.Writer, in x509.Certificate) 
 			out.RawString("null")
 		} else {
 			out.RawByte('[')
-			for v119, v120 := range in.PermittedDNSDomains {
-				if v119 > 0 {
+			for v122, v123 := range in.PermittedDNSDomains {
+				if v122 > 0 {
 					out.RawByte(',')
 				}
-				out.String(string(v120))
+				out.String(string(v123))
 			}
 			out.RawByte(']')
 		}
@@ -1884,11 +1896,11 @@ func easyjsonBc289ab0EncodeCryptoX509(out *jwriter.Writer, in x509.Certificate) 
 			out.RawString("null")
 		} else {
 			out.RawByte('[')
-			for v121, v122 := range in.ExcludedDNSDomains {
-				if v121 > 0 {
+			for v124, v125 := range in.ExcludedDNSDomains {
+				if v124 > 0 {
 					out.RawByte(',')
 				}
-				out.String(string(v122))
+				out.String(string(v125))
 			}
 			out.RawByte(']')
 		}
@@ -1900,14 +1912,14 @@ func easyjsonBc289ab0EncodeCryptoX509(out *jwriter.Writer, in x509.Certificate) 
 			out.RawString("null")
 		} else {
 			out.RawByte('[')
-			for v123, v124 := range in.PermittedIPRanges {
-				if v123 > 0 {
+			for v126, v127 := range in.PermittedIPRanges {
+				if v126 > 0 {
 					out.RawByte(',')
 				}
-				if v124 == nil {
+				if v127 == nil {
 					out.RawString("null")
 				} else {
-					easyjsonBc289ab0EncodeNet(out, *v124)
+					easyjsonBc289ab0EncodeNet(out, *v127)
 				}
 			}
 			out.RawByte(']')
@@ -1920,14 +1932,14 @@ func easyjsonBc289ab0EncodeCryptoX509(out *jwriter.Writer, in x509.Certificate) 
 			out.RawString("null")
 		} else {
 			out.RawByte('[')
-			for v125, v126 := range in.ExcludedIPRanges {
-				if v125 > 0 {
+			for v128, v129 := range in.ExcludedIPRanges {
+				if v128 > 0 {
 					out.RawByte(',')
 				}
-				if v126 == nil {
+				if v129 == nil {
 					out.RawString("null")
 				} else {
-					easyjsonBc289ab0EncodeNet(out, *v126)
+					easyjsonBc289ab0EncodeNet(out, *v129)
 				}
 			}
 			out.RawByte(']')
@@ -1940,11 +1952,11 @@ func easyjsonBc289ab0EncodeCryptoX509(out *jwriter.Writer, in x509.Certificate) 
 			out.RawString("null")
 		} else {
 			out.RawByte('[')
-			for v127, v128 := range in.PermittedEmailAddresses {
-				if v127 > 0 {
+			for v130, v131 := range in.PermittedEmailAddresses {
+				if v130 > 0 {
 					out.RawByte(',')
 				}
-				out.String(string(v128))
+				out.String(string(v131))
 			}
 			out.RawByte(']')
 		}
@@ -1956,11 +1968,11 @@ func easyjsonBc289ab0EncodeCryptoX509(out *jwriter.Writer, in x509.Certificate) 
 			out.RawString("null")
 		} else {
 			out.RawByte('[')
-			for v129, v130 := range in.ExcludedEmailAddresses {
-				if v129 > 0 {
+			for v132, v133 := range in.ExcludedEmailAddresses {
+				if v132 > 0 {
 					out.RawByte(',')
 				}
-				out.String(string(v130))
+				out.String(string(v133))
 			}
 			out.RawByte(']')
 		}
@@ -1972,11 +1984,11 @@ func easyjsonBc289ab0EncodeCryptoX509(out *jwriter.Writer, in x509.Certificate) 
 			out.RawString("null")
 		} else {
 			out.RawByte('[')
-			for v131, v132 := range in.PermittedURIDomains {
-				if v131 > 0 {
+			for v134, v135 := range in.PermittedURIDomains {
+				if v134 > 0 {
 					out.RawByte(',')
 				}
-				out.String(string(v132))
+				out.String(string(v135))
 			}
 			out.RawByte(']')
 		}
@@ -1988,11 +2000,11 @@ func easyjsonBc289ab0EncodeCryptoX509(out *jwriter.Writer, in x509.Certificate) 
 			out.RawString("null")
 		} else {
 			out.RawByte('[')
-			for v133, v134 := range in.ExcludedURIDomains {
-				if v133 > 0 {
+			for v136, v137 := range in.ExcludedURIDomains {
+				if v136 > 0 {
 					out.RawByte(',')
 				}
-				out.String(string(v134))
+				out.String(string(v137))
 			}
 			out.RawByte(']')
 		}
@@ -2004,11 +2016,11 @@ func easyjsonBc289ab0EncodeCryptoX509(out *jwriter.Writer, in x509.Certificate) 
 			out.RawString("null")
 		} else {
 			out.RawByte('[')
-			for v135, v136 := range in.CRLDistributionPoints {
-				if v135 > 0 {
+			for v138, v139 := range in.CRLDistributionPoints {
+				if v138 > 0 {
 					out.RawByte(',')
 				}
-				out.String(string(v136))
+				out.String(string(v139))
 			}
 			out.RawByte(']')
 		}
@@ -2020,19 +2032,19 @@ func easyjsonBc289ab0EncodeCryptoX509(out *jwriter.Writer, in x509.Certificate) 
 			out.RawString("null")
 		} else {
 			out.RawByte('[')
-			for v137, v138 := range in.PolicyIdentifiers {
-				if v137 > 0 {
+			for v140, v141 := range in.PolicyIdentifiers {
+				if v140 > 0 {
 					out.RawByte(',')
 				}
-				if v138 == nil && (out.Flags&jwriter.NilSliceAsEmpty) == 0 {
+				if v141 == nil && (out.Flags&jwriter.NilSliceAsEmpty) == 0 {
 					out.RawString("null")
 				} else {
 					out.RawByte('[')
-					for v139, v140 := range v138 {
-						if v139 > 0 {
+					for v142, v143 := range v141 {
+						if v142 > 0 {
 							out.RawByte(',')
 						}
-						out.Int(int(v140))
+						out.Int(int(v143))
 					}
 					out.RawByte(']')
 				}
@@ -2133,9 +2145,9 @@ func easyjsonBc289ab0DecodeCryptoX509Pkix1(in *jlexer.Lexer, out *pkix.Extension
 					out.Id = (out.Id)[:0]
 				}
 				for !in.IsDelim(']') {
-					var v144 int
-					v144 = int(in.Int())
-					out.Id = append(out.Id, v144)
+					var v147 int
+					v147 = int(in.Int())
+					out.Id = append(out.Id, v147)
 					in.WantComma()
 				}
 				in.Delim(']')
@@ -2170,11 +2182,11 @@ func easyjsonBc289ab0EncodeCryptoX509Pkix1(out *jwriter.Writer, in pkix.Extensio
 			out.RawString("null")
 		} else {
 			out.RawByte('[')
-			for v146, v147 := range in.Id {
-				if v146 > 0 {
+			for v149, v150 := range in.Id {
+				if v149 > 0 {
 					out.RawByte(',')
 				}
-				out.Int(int(v147))
+				out.Int(int(v150))
 			}
 			out.RawByte(']')
 		}
@@ -2226,9 +2238,9 @@ func easyjsonBc289ab0DecodeCryptoX509Pkix(in *jlexer.Lexer, out *pkix.Name) {
 					out.Country = (out.Country)[:0]
 				}
 				for !in.IsDelim(']') {
-					var v150 string
-					v150 = string(in.String())
-					out.Country = append(out.Country, v150)
+					var v153 string
+					v153 = string(in.String())
+					out.Country = append(out.Country, v153)
 					in.WantComma()
 				}
 				in.Delim(']')
@@ -2249,9 +2261,9 @@ func easyjsonBc289ab0DecodeCryptoX509Pkix(in *jlexer.Lexer, out *pkix.Name) {
 					out.Organization = (out.Organization)[:0]
 				}
 				for !in.IsDelim(']') {
-					var v151 string
-					v151 = string(in.String())
-					out.Organization = append(out.Organization, v151)
+					var v154 string
+					v154 = string(in.String())
+					out.Organization = append(out.Organization, v154)
 					in.WantComma()
 				}
 				in.Delim(']')
@@ -2272,9 +2284,9 @@ func easyjsonBc289ab0DecodeCryptoX509Pkix(in *jlexer.Lexer, out *pkix.Name) {
 					out.OrganizationalUnit = (out.OrganizationalUnit)[:0]
 				}
 				for !in.IsDelim(']') {
-					var v152 string
-					v152 = string(in.String())
-					out.OrganizationalUnit = append(out.OrganizationalUnit, v152)
+					var v155 string
+					v155 = string(in.String())
+					out.OrganizationalUnit = append(out.OrganizationalUnit, v155)
 					in.WantComma()
 				}
 				in.Delim(']')
@@ -2295,9 +2307,9 @@ func easyjsonBc289ab0DecodeCryptoX509Pkix(in *jlexer.Lexer, out *pkix.Name) {
 					out.Locality = (out.Locality)[:0]
 				}
 				for !in.IsDelim(']') {
-					var v153 string
-					v153 = string(in.String())
-					out.Locality = append(out.Locality, v153)
+					var v156 string
+					v156 = string(in.String())
+					out.Locality = append(out.Locality, v156)
 					in.WantComma()
 				}
 				in.Delim(']')
@@ -2318,9 +2330,9 @@ func easyjsonBc289ab0DecodeCryptoX509Pkix(in *jlexer.Lexer, out *pkix.Name) {
 					out.Province = (out.Province)[:0]
 				}
 				for !in.IsDelim(']') {
-					var v154 string
-					v154 = string(in.String())
-					out.Province = append(out.Province, v154)
+					var v157 string
+					v157 = string(in.String())
+					out.Province = append(out.Province, v157)
 					in.WantComma()
 				}
 				in.Delim(']')
@@ -2341,9 +2353,9 @@ func easyjsonBc289ab0DecodeCryptoX509Pkix(in *jlexer.Lexer, out *pkix.Name) {
 					out.StreetAddress = (out.StreetAddress)[:0]
 				}
 				for !in.IsDelim(']') {
-					var v155 string
-					v155 = string(in.String())
-					out.StreetAddress = append(out.StreetAddress, v155)
+					var v158 string
+					v158 = string(in.String())
+					out.StreetAddress = append(out.StreetAddress, v158)
 					in.WantComma()
 				}
 				in.Delim(']')
@@ -2364,9 +2376,9 @@ func easyjsonBc289ab0DecodeCryptoX509Pkix(in *jlexer.Lexer, out *pkix.Name) {
 					out.PostalCode = (out.PostalCode)[:0]
 				}
 				for !in.IsDelim(']') {
-					var v156 string
-					v156 = string(in.String())
-					out.PostalCode = append(out.PostalCode, v156)
+					var v159 string
+					v159 = string(in.String())
+					out.PostalCode = append(out.PostalCode, v159)
 					in.WantComma()
 				}
 				in.Delim(']')
@@ -2391,9 +2403,9 @@ func easyjsonBc289ab0DecodeCryptoX509Pkix(in *jlexer.Lexer, out *pkix.Name) {
 					out.Names = (out.Names)[:0]
 				}
 				for !in.IsDelim(']') {
-					var v157 pkix.AttributeTypeAndValue
-					easyjsonBc289ab0DecodeCryptoX509Pkix2(in, &v157)
-					out.Names = append(out.Names, v157)
+					var v160 pkix.AttributeTypeAndValue
+					easyjsonBc289ab0DecodeCryptoX509Pkix2(in, &v160)
+					out.Names = append(out.Names, v160)
 					in.WantComma()
 				}
 				in.Delim(']')
@@ -2414,9 +2426,9 @@ func easyjsonBc289ab0DecodeCryptoX509Pkix(in *jlexer.Lexer, out *pkix.Name) {
 					out.ExtraNames = (out.ExtraNames)[:0]
 				}
 				for !in.IsDelim(']') {
-					var v158 pkix.AttributeTypeAndValue
-					easyjsonBc289ab0DecodeCryptoX509Pkix2(in, &v158)
-					out.ExtraNames = append(out.ExtraNames, v158)
+					var v161 pkix.AttributeTypeAndValue
+					easyjsonBc289ab0DecodeCryptoX509Pkix2(in, &v161)
+					out.ExtraNames = append(out.ExtraNames, v161)
 					in.WantComma()
 				}
 				in.Delim(']')
@@ -2442,11 +2454,11 @@ func easyjsonBc289ab0EncodeCryptoX509Pkix(out *jwriter.Writer, in pkix.Name) {
 			out.RawString("null")
 		} else {
 			out.RawByte('[')
-			for v159, v160 := range in.Country {
-				if v159 > 0 {
+			for v162, v163 := range in.Country {
+				if v162 > 0 {
 					out.RawByte(',')
 				}
-				out.String(string(v160))
+				out.String(string(v163))
 			}
 			out.RawByte(']')
 		}
@@ -2458,11 +2470,11 @@ func easyjsonBc289ab0EncodeCryptoX509Pkix(out *jwriter.Writer, in pkix.Name) {
 			out.RawString("null")
 		} else {
 			out.RawByte('[')
-			for v161, v162 := range in.Organization {
-				if v161 > 0 {
+			for v164, v165 := range in.Organization {
+				if v164 > 0 {
 					out.RawByte(',')
 				}
-				out.String(string(v162))
+				out.String(string(v165))
 			}
 			out.RawByte(']')
 		}
@@ -2474,11 +2486,11 @@ func easyjsonBc289ab0EncodeCryptoX509Pkix(out *jwriter.Writer, in pkix.Name) {
 			out.RawString("null")
 		} else {
 			out.RawByte('[')
-			for v163, v164 := range in.OrganizationalUnit {
-				if v163 > 0 {
+			for v166, v167 := range in.OrganizationalUnit {
+				if v166 > 0 {
 					out.RawByte(',')
 				}
-				out.String(string(v164))
+				out.String(string(v167))
 			}
 			out.RawByte(']')
 		}
@@ -2490,11 +2502,11 @@ func easyjsonBc289ab0EncodeCryptoX509Pkix(out *jwriter.Writer, in pkix.Name) {
 			out.RawString("null")
 		} else {
 			out.RawByte('[')
-			for v165, v166 := range in.Locality {
-				if v165 > 0 {
+			for v168, v169 := range in.Locality {
+				if v168 > 0 {
 					out.RawByte(',')
 				}
-				out.String(string(v166))
+				out.String(string(v169))
 			}
 			out.RawByte(']')
 		}
@@ -2506,11 +2518,11 @@ func easyjsonBc289ab0EncodeCryptoX509Pkix(out *jwriter.Writer, in pkix.Name) {
 			out.RawString("null")
 		} else {
 			out.RawByte('[')
-			for v167, v168 := range in.Province {
-				if v167 > 0 {
+			for v170, v171 := range in.Province {
+				if v170 > 0 {
 					out.RawByte(',')
 				}
-				out.String(string(v168))
+				out.String(string(v171))
 			}
 			out.RawByte(']')
 		}
@@ -2522,11 +2534,11 @@ func easyjsonBc289ab0EncodeCryptoX509Pkix(out *jwriter.Writer, in pkix.Name) {
 			out.RawString("null")
 		} else {
 			out.RawByte('[')
-			for v169, v170 := range in.StreetAddress {
-				if v169 > 0 {
+			for v172, v173 := range in.StreetAddress {
+				if v172 > 0 {
 					out.RawByte(',')
 				}
-				out.String(string(v170))
+				out.String(string(v173))
 			}
 			out.RawByte(']')
 		}
@@ -2538,11 +2550,11 @@ func easyjsonBc289ab0EncodeCryptoX509Pkix(out *jwriter.Writer, in pkix.Name) {
 			out.RawString("null")
 		} else {
 			out.RawByte('[')
-			for v171, v172 := range in.PostalCode {
-				if v171 > 0 {
+			for v174, v175 := range in.PostalCode {
+				if v174 > 0 {
 					out.RawByte(',')
 				}
-				out.String(string(v172))
+				out.String(string(v175))
 			}
 			out.RawByte(']')
 		}
@@ -2564,11 +2576,11 @@ func easyjsonBc289ab0EncodeCryptoX509Pkix(out *jwriter.Writer, in pkix.Name) {
 			out.RawString("null")
 		} else {
 			out.RawByte('[')
-			for v173, v174 := range in.Names {
-				if v173 > 0 {
+			for v176, v177 := range in.Names {
+				if v176 > 0 {
 					out.RawByte(',')
 				}
-				easyjsonBc289ab0EncodeCryptoX509Pkix2(out, v174)
+				easyjsonBc289ab0EncodeCryptoX509Pkix2(out, v177)
 			}
 			out.RawByte(']')
 		}
@@ -2580,11 +2592,11 @@ func easyjsonBc289ab0EncodeCryptoX509Pkix(out *jwriter.Writer, in pkix.Name) {
 			out.RawString("null")
 		} else {
 			out.RawByte('[')
-			for v175, v176 := range in.ExtraNames {
-				if v175 > 0 {
+			for v178, v179 := range in.ExtraNames {
+				if v178 > 0 {
 					out.RawByte(',')
 				}
-				easyjsonBc289ab0EncodeCryptoX509Pkix2(out, v176)
+				easyjsonBc289ab0EncodeCryptoX509Pkix2(out, v179)
 			}
 			out.RawByte(']')
 		}
@@ -2626,9 +2638,9 @@ func easyjsonBc289ab0DecodeCryptoX509Pkix2(in *jlexer.Lexer, out *pkix.Attribute
 					out.Type = (out.Type)[:0]
 				}
 				for !in.IsDelim(']') {
-					var v177 int
-					v177 = int(in.Int())
-					out.Type = append(out.Type, v177)
+					var v180 int
+					v180 = int(in.Int())
+					out.Type = append(out.Type, v180)
 					in.WantComma()
 				}
 				in.Delim(']')
@@ -2662,11 +2674,11 @@ func easyjsonBc289ab0EncodeCryptoX509Pkix2(out *jwriter.Writer, in pkix.Attribut
 			out.RawString("null")
 		} else {
 			out.RawByte('[')
-			for v178, v179 := range in.Type {
-				if v178 > 0 {
+			for v181, v182 := range in.Type {
+				if v181 > 0 {
 					out.RawByte(',')
 				}
-				out.Int(int(v179))
+				out.Int(int(v182))
 			}
 			out.RawByte(']')
 		}
@@ -2716,30 +2728,30 @@ func easyjsonBc289ab0DecodeMimeMultipart(in *jlexer.Lexer, out *multipart.Form) 
 				for !in.IsDelim('}') {
 					key := string(in.String())
 					in.WantColon()
-					var v180 []string
+					var v183 []string
 					if in.IsNull() {
 						in.Skip()
-						v180 = nil
+						v183 = nil
 					} else {
 						in.Delim('[')
-						if v180 == nil {
+						if v183 == nil {
 							if !in.IsDelim(']') {
-								v180 = make([]string, 0, 4)
+								v183 = make([]string, 0, 4)
 							} else {
-								v180 = []string{}
+								v183 = []string{}
 							}
 						} else {
-							v180 = (v180)[:0]
+							v183 = (v183)[:0]
 						}
 						for !in.IsDelim(']') {
-							var v181 string
-							v181 = string(in.String())
-							v180 = append(v180, v181)
+							var v184 string
+							v184 = string(in.String())
+							v183 = append(v183, v184)
 							in.WantComma()
 						}
 						in.Delim(']')
 					}
-					(out.Value)[key] = v180
+					(out.Value)[key] = v183
 					in.WantComma()
 				}
 				in.Delim('}')
@@ -2757,38 +2769,38 @@ func easyjsonBc289ab0DecodeMimeMultipart(in *jlexer.Lexer, out *multipart.Form) 
 				for !in.IsDelim('}') {
 					key := string(in.String())
 					in.WantColon()
-					var v182 []*multipart.FileHeader
+					var v185 []*multipart.FileHeader
 					if in.IsNull() {
 						in.Skip()
-						v182 = nil
+						v185 = nil
 					} else {
 						in.Delim('[')
-						if v182 == nil {
+						if v185 == nil {
 							if !in.IsDelim(']') {
-								v182 = make([]*multipart.FileHeader, 0, 8)
+								v185 = make([]*multipart.FileHeader, 0, 8)
 							} else {
-								v182 = []*multipart.FileHeader{}
+								v185 = []*multipart.FileHeader{}
 							}
 						} else {
-							v182 = (v182)[:0]
+							v185 = (v185)[:0]
 						}
 						for !in.IsDelim(']') {
-							var v183 *multipart.FileHeader
+							var v186 *multipart.FileHeader
 							if in.IsNull() {
 								in.Skip()
-								v183 = nil
+								v186 = nil
 							} else {
-								if v183 == nil {
-									v183 = new(multipart.FileHeader)
+								if v186 == nil {
+									v186 = new(multipart.FileHeader)
 								}
-								easyjsonBc289ab0DecodeMimeMultipart1(in, v183)
+								easyjsonBc289ab0DecodeMimeMultipart1(in, v186)
 							}
-							v182 = append(v182, v183)
+							v185 = append(v185, v186)
 							in.WantComma()
 						}
 						in.Delim(']')
 					}
-					(out.File)[key] = v182
+					(out.File)[key] = v185
 					in.WantComma()
 				}
 				in.Delim('}')
@@ -2814,40 +2826,8 @@ func easyjsonBc289ab0EncodeMimeMultipart(out *jwriter.Writer, in multipart.Form)
 			out.RawString(`null`)
 		} else {
 			out.RawByte('{')
-			v184First := true
-			for v184Name, v184Value := range in.Value {
-				if v184First {
-					v184First = false
-				} else {
-					out.RawByte(',')
-				}
-				out.String(string(v184Name))
-				out.RawByte(':')
-				if v184Value == nil && (out.Flags&jwriter.NilSliceAsEmpty) == 0 {
-					out.RawString("null")
-				} else {
-					out.RawByte('[')
-					for v185, v186 := range v184Value {
-						if v185 > 0 {
-							out.RawByte(',')
-						}
-						out.String(string(v186))
-					}
-					out.RawByte(']')
-				}
-			}
-			out.RawByte('}')
-		}
-	}
-	{
-		const prefix string = ",\"File\":"
-		out.RawString(prefix)
-		if in.File == nil && (out.Flags&jwriter.NilMapAsEmpty) == 0 {
-			out.RawString(`null`)
-		} else {
-			out.RawByte('{')
 			v187First := true
-			for v187Name, v187Value := range in.File {
+			for v187Name, v187Value := range in.Value {
 				if v187First {
 					v187First = false
 				} else {
@@ -2863,10 +2843,42 @@ func easyjsonBc289ab0EncodeMimeMultipart(out *jwriter.Writer, in multipart.Form)
 						if v188 > 0 {
 							out.RawByte(',')
 						}
-						if v189 == nil {
+						out.String(string(v189))
+					}
+					out.RawByte(']')
+				}
+			}
+			out.RawByte('}')
+		}
+	}
+	{
+		const prefix string = ",\"File\":"
+		out.RawString(prefix)
+		if in.File == nil && (out.Flags&jwriter.NilMapAsEmpty) == 0 {
+			out.RawString(`null`)
+		} else {
+			out.RawByte('{')
+			v190First := true
+			for v190Name, v190Value := range in.File {
+				if v190First {
+					v190First = false
+				} else {
+					out.RawByte(',')
+				}
+				out.String(string(v190Name))
+				out.RawByte(':')
+				if v190Value == nil && (out.Flags&jwriter.NilSliceAsEmpty) == 0 {
+					out.RawString("null")
+				} else {
+					out.RawByte('[')
+					for v191, v192 := range v190Value {
+						if v191 > 0 {
+							out.RawByte(',')
+						}
+						if v192 == nil {
 							out.RawString("null")
 						} else {
-							easyjsonBc289ab0EncodeMimeMultipart1(out, *v189)
+							easyjsonBc289ab0EncodeMimeMultipart1(out, *v192)
 						}
 					}
 					out.RawByte(']')
@@ -2911,30 +2923,30 @@ func easyjsonBc289ab0DecodeMimeMultipart1(in *jlexer.Lexer, out *multipart.FileH
 				for !in.IsDelim('}') {
 					key := string(in.String())
 					in.WantColon()
-					var v190 []string
+					var v193 []string
 					if in.IsNull() {
 						in.Skip()
-						v190 = nil
+						v193 = nil
 					} else {
 						in.Delim('[')
-						if v190 == nil {
+						if v193 == nil {
 							if !in.IsDelim(']') {
-								v190 = make([]string, 0, 4)
+								v193 = make([]string, 0, 4)
 							} else {
-								v190 = []string{}
+								v193 = []string{}
 							}
 						} else {
-							v190 = (v190)[:0]
+							v193 = (v193)[:0]
 						}
 						for !in.IsDelim(']') {
-							var v191 string
-							v191 = string(in.String())
-							v190 = append(v190, v191)
+							var v194 string
+							v194 = string(in.String())
+							v193 = append(v193, v194)
 							in.WantComma()
 						}
 						in.Delim(']')
 					}
-					(out.Header)[key] = v190
+					(out.Header)[key] = v193
 					in.WantComma()
 				}
 				in.Delim('}')
@@ -2967,24 +2979,24 @@ func easyjsonBc289ab0EncodeMimeMultipart1(out *jwriter.Writer, in multipart.File
 			out.RawString(`null`)
 		} else {
 			out.RawByte('{')
-			v192First := true
-			for v192Name, v192Value := range in.Header {
-				if v192First {
-					v192First = false
+			v195First := true
+			for v195Name, v195Value := range in.Header {
+				if v195First {
+					v195First = false
 				} else {
 					out.RawByte(',')
 				}
-				out.String(string(v192Name))
+				out.String(string(v195Name))
 				out.RawByte(':')
-				if v192Value == nil && (out.Flags&jwriter.NilSliceAsEmpty) == 0 {
+				if v195Value == nil && (out.Flags&jwriter.NilSliceAsEmpty) == 0 {
 					out.RawString("null")
 				} else {
 					out.RawByte('[')
-					for v193, v194 := range v192Value {
-						if v193 > 0 {
+					for v196, v197 := range v195Value {
+						if v196 > 0 {
 							out.RawByte(',')
 						}
-						out.String(string(v194))
+						out.String(string(v197))
 					}
 					out.RawByte(']')
 				}

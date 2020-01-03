@@ -31,7 +31,7 @@ type BodyRequest struct {
 	RemoteAddr       string
 	RequestURI       string
 	TLS              *tls.ConnectionState
-	body             []byte
+	Payload          []byte
 }
 
 func (r *BodyRequest) Unmarshal(b []byte) error {
@@ -89,9 +89,9 @@ func (r *BodyRequest) BuildRequest(ctx context.Context) *http.Request {
 		TLS:              r.TLS,
 		Cancel:           ctx.Done(),
 		GetBody: func() (io.ReadCloser, error) {
-			return ioutil.NopCloser(bytes.NewReader(r.body)), nil
+			return ioutil.NopCloser(bytes.NewReader(r.Payload)), nil
 		},
-		Body: ioutil.NopCloser(bytes.NewReader(r.body)),
+		Body: ioutil.NopCloser(bytes.NewReader(r.Payload)),
 	}
 	return cpy.WithContext(ctx)
 }

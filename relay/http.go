@@ -135,7 +135,7 @@ func (h *HTTP) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	_, err := bodyBuf.ReadFrom(r.Body)
 	if err != nil {
 		putBuf(bodyBuf)
-		dbError(w, http.StatusInternalServerError, "problem reading request body")
+		dbError(w, http.StatusInternalServerError, "problem reading request Payload")
 		return
 	}
 	if strings.ToUpper(string(bodyBuf.Bytes()[:7])) == "SELECT " {
@@ -269,7 +269,7 @@ func (b *httpBackend) loop(ctx context.Context) {
 }
 
 func (b *httpBackend) Append(r *http.Request, body []byte) error {
-	br := &BodyRequest{body: body}
+	br := &BodyRequest{Payload: body}
 
 	if b.queue.Length() == 0 {
 		rq := r.WithContext(r.Context())
