@@ -269,10 +269,11 @@ func (b *httpBackend) loop(ctx context.Context) {
 }
 
 func (b *httpBackend) Append(r *http.Request, body []byte) error {
-	br := &BodyRequest{Request: r, body: body}
+	br := &BodyRequest{body: body}
 
 	if b.queue.Length() == 0 {
-		rq := br.BuildRequest(br.Context())
+		rq := r.WithContext(r.Context())
+		rq.Body = ioutil.NopCloser(bytes.NewReader(body))
 		rp := &recordResponseWriter{ResponseWriter: DiscardResponseWriter}
 		err := b.ReverseProxy(rp, rq)
 		if err == nil && rp.statusCode == 200 {
@@ -280,7 +281,7 @@ func (b *httpBackend) Append(r *http.Request, body []byte) error {
 		}
 	}
 
-	data, err := br.Marshal()
+	data, err := br.Marshal(r)
 	if err != nil {
 		return err
 	}
